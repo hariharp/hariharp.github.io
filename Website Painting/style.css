@@ -1,0 +1,141 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    body {
+        background: linear-gradient(to right, lightblue, darkblue, darkgreen, lightgreen);
+      }
+}
+.apple {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    animation: pulse 1s infinite;
+}
+
+.top {
+    display: block;
+    position: absolute;
+    top: 0;
+    background-color: #FF0000;
+    width: 100%;
+    height: 60%;
+    border-radius: 50% 50% 0 0;
+}
+
+.bottom {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    background-color: #FF0000;
+    width: 100%;
+    height: 40%;
+    border-radius: 0 0 50% 50%;
+}
+
+.hole {
+    display: block;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.stem {
+    display: block;
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: green;
+    width: 20px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.worm {
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 50px;
+    height: 10px;
+    background-color: brown;
+    border-radius: 5px;
+    animation: wriggle 1s infinite;
+}
+
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes shake {
+    0% {
+        transform: rotate(0deg);
+    }
+    10% {
+        transform: rotate(-10deg);
+    }
+    20% {
+        transform: rotate(10deg);
+    }
+    30% {
+        transform: rotate(-10deg);
+    }
+    40% {
+        transform: rotate(10deg);
+    }
+    50% {
+        transform: rotate(-10deg);
+    }
+    60% {
+        transform: rotate(10deg);
+    }
+    70% {
+        transform: rotate(-10deg);
+    }
+    80% {
+        transform: rotate(10deg);
+    }
+    90% {
+        transform: rotate(-10deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+@keyframes wriggle {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
