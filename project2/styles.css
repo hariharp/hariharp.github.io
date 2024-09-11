@@ -1,0 +1,59 @@
+/* General styles */
+body {
+    background-color: #000;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Header */
+h1 {
+    color: #ff00ff;
+    font-size: 3em;
+    text-shadow: 2px 2px #00ff00;
+}
+
+/* Navigation */
+nav a {
+    color: #ff00ff;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+/* Focus styles */
+a:focus, button:focus {
+    outline: 2px solid #ff00ff;
+}
+
+/* Main content */
+hr {
+    border-color: #00ff00;
+    margin: 20px 0;
+}
+
+p {
+    margin-top: 20px;
+}
+
+/* Section headings */
+h2 {
+    color: #ff00ff;
+    font-size: 2em;
+    text-align: left;
+    padding: 45px;
+}
+
+/* Links inside sections */
+section a {
+    color: #ff00ff;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    font-size: 0.8em;
+}

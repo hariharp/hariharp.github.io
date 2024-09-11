@@ -1,0 +1,67 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #8ca9e8;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styles */
+header {
+    background-color: #ef4abe;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+/* Main Section Styles */
+main {
+    padding: 20px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Project List Styles */
+.project-list {
+    list-style: none;
+    padding: 0;
+}
+
+.project-list li {
+    margin-bottom: 15px;
+}
+
+.project-list li a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.project-list li a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #ef4abe;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
