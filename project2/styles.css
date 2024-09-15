@@ -1,59 +1,175 @@
-/* General styles */
+
 body {
-    background-color: #000;
-    color: #00ff00;
-    font-family: 'Courier New', Courier, monospace;
+    background-color: #000; /* Black background for retro feel */
+    color: #39ff14; /* Neon green text */
+    font-family: 'Courier New', Courier, monospace; 
     line-height: 1.6;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* takes up at least the full viewport height */
+    font-size: 0.9em; /* Smaller font size for the body */
+}
+
+/* Main content area */
+main {
+    flex: 1; /* push footer down */
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: justify;
+    padding: 20px;
+    border-left: 5px solid #ff00ff; /* Bright neon border */
+    border-right: 5px solid #ff00ff;
+}
+
+/* Unconventional Layout */
+h1, h2 {
+    font-family: 'Lucida Console', Monaco, monospace;
+    font-size: 2.5em; /* Smaller header size */
     text-align: center;
-}
-
-/* Header */
-h1 {
-    color: #ff00ff;
-    font-size: 3em;
-    text-shadow: 2px 2px #00ff00;
-}
-
-/* Navigation */
-nav a {
-    color: #ff00ff;
-    text-decoration: none;
-    font-size: 1.5em;
-}
-
-/* Focus styles */
-a:focus, button:focus {
-    outline: 2px solid #ff00ff;
-}
-
-/* Main content */
-hr {
-    border-color: #00ff00;
-    margin: 20px 0;
+    color: #00FFFF; /* Cyan for a striking header */
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px #ff00ff; /* Neon pink shadow for a glitchy effect */
 }
 
 p {
-    margin-top: 20px;
+    font-size: 1em; /* Smaller font size for paragraphs */
+    margin-bottom: 1.5em;
+    line-height: 1.8;
 }
 
-/* Section headings */
-h2 {
-    color: #ff00ff;
-    font-size: 2em;
-    text-align: left;
-    padding: 45px;
-}
-
-/* Links inside sections */
-section a {
-    color: #ff00ff;
-    text-decoration: none;
-    font-size: 1em;
-}
-
-/* Footer */
-footer {
+/* Navigation */
+nav ul {
+    list-style-type: none;
+    padding: 0;
     text-align: center;
-    padding: 10px;
-    font-size: 0.8em;
+    margin: 20px 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 10px;
+}
+
+nav a {
+    font-size: 1.2em; /* Smaller font size for nav links */
+    color: #00FF00; /* Neon green links */
+    text-decoration: none;
+    background-color: #000;
+    padding: 10px 20px;
+    border: 2px solid #00FF00;
+    transition: all 0.3s ease-in-out;
+}
+
+nav a:hover {
+    background-color: #FF00FF; /* Neon pink hover effect */
+    color: #000;
+    transform: scale(1.1); /* Slightly enlarges the link */
+    border-color: #39FF14; /* Neon green border when hovered */
+}
+
+/* Glitchy Footer */
+footer {
+    font-size: 1em;
+    text-align: center;
+    color: #000000; /* black for visibilty contrast */
+    background-color: #f767c2; /* Flashy pink background */
+    padding: 3px;
+    margin-top: 30px;
+    letter-spacing: 2px;
+    animation: glitch 3s infinite; /* Glitch effect */
+    flex-shrink: 0; /* Prevent footer from shrinking */
+}
+
+/* Keyframes for glitch effect */
+@keyframes glitch {
+    0%, 100% {
+        transform: none;
+    }
+    10% {
+        transform: skew(-3deg);
+    }
+    20% {
+        transform: skew(3deg);
+    }
+    30% {
+        transform: skew(-3deg) scale(1.02);
+    }
+    40% {
+        transform: skew(3deg) scale(1.02);
+    }
+}
+
+/* Randomized Font Sizes */
+p:nth-child(odd) {
+    font-size: 1.1em; /* Adjusted for smaller paragraphs */
+}
+
+p:nth-child(even) {
+    font-size: 0.9em; /* Further adjustment for smaller paragraphs */
+}
+
+/* Header Animation */
+h1 {
+    animation: flicker 5s infinite alternate;
+}
+
+@keyframes flicker {
+    0% {
+        opacity: 1;
+        text-shadow: 2px 2px 5px #ff00ff;
+    }
+    50% {
+        opacity: 0.8;
+        text-shadow: none;
+    }
+    100% {
+        opacity: 1;
+        text-shadow: 2px 2px 5px #ff00ff;
+    }
+}
+
+/* Link Hover Animation */
+a {
+    transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+    color: #ff00ff;
+    background-color: #00ffff;
+    font-size: 1.4em; /* Slightly larger font size on hover */
+}
+
+/* Button-like Links */
+a:focus {
+    outline: 2px dotted #FF00FF; /* Retro dotted outline */
+    background-color: #ff00ff;
+    color: #000;
+}
+
+/* Keyframes for wiggling effect */
+@keyframes wiggle {
+    0% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+    100% { transform: rotate(-3deg); }
+}
+
+/* Apply wiggle animation to choice elements */
+.choice {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #00FF00; /* Neon green text */
+    text-decoration: none;
+    background-color: #000; /* Black background */
+    border: 2px solid #00FF00; /* Neon green border */
+    transition: all 0.3s ease-in-out;
+    animation: wiggle 1s infinite; /* the wiggle animation */
+}
+
+/* Hover effect for choices */
+.choice:hover {
+    background-color: #FF00FF; /* Neon pink hover effect */
+    color: #000; /* Black text on hover */
+    transform: scale(1.1); /* Slightly enlarges the link */
 }
