@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="keywords" content="Portfolio, Projects, COMM636">
+        <meta name="author" content="Poorvi Hariharan">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Poorvi Hariharan - COMM636 Project 3</title>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+<body>
+    <header>
+        <h1>My Veggie Cookbook</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-section">
+            <h2>Contact Me</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Email</h3>
+                    <p>placeholderemail@email.com</p>
+
+                    <h3>Phone</h3>
+                    <p>000-000-0000</p>
+
+                </div>
+
+                <div class="contact-form">
+                    <h3>Send Me a Message</h3>
+                    <form action="submit_form.php" method="post">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+
+                        <button type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="css-concepts">
+            <h2>CSS Concepts Used</h2>
+            <h3>CSS Grid</h3>
+            <p>This page uses CSS Grid to create a modern and organized layout for the contact information and form, making it visually appealing and easy to navigate.</p>
+
+            <h3>Box Model</h3>
+            <p>The CSS Box Model is applied to the form inputs and textarea, ensuring proper padding and margins for a neat appearance.</p>
+
+            <h3>Responsive Design</h3>
+            <p>Media queries ensure that the layout adjusts to different screen sizes, maintaining readability and usability on both mobile and desktop devices.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Poorvi Hariharan. All rights reserved.</p>
+    </footer>
+</body>
+</html>
