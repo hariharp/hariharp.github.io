@@ -251,4 +251,10 @@ main {
     transform: translateY(-5px); 
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7); /* Enhanced shadow on hover */
 }
-
+.message-box {
+    display: inline-block; /* Centering the message box */
+    background-color: #000; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 600px; /* Optional max width */
+}
