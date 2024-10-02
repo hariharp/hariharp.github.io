@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pick Your Aesthetic</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Pick Your Fall Aesthetic and Get Your Message for October!</h1>
+  </header>
+
+  <main>
+    <section class="grid-container">
+      <div class="image-box">
+        <img src="images/downtowngirl.jpg" alt="Aesthetic 1" tabindex="0" onclick="showMessage(1)">
+      </div>
+      <div class="image-box">
+        <img src="images/darkacademia.jpg" alt="Aesthetic 2" tabindex="0" onclick="showMessage(2)">
+      </div>
+      <div class="image-box">
+        <img src="images/officesiren.jpg" alt="Aesthetic 3" tabindex="0" onclick="showMessage(3)">
+      </div>
+      <div class="image-box">
+        <img src="images/cozyfall.jpg" alt="Aesthetic 4" tabindex="0" onclick="showMessage(4)">
+      </div>
+      <div class="image-box">
+        <img src="images/spookyhalloween.jpg" alt="Aesthetic 5" tabindex="0" onclick="showMessage(5)">
+      </div>
+    </section>
+
+    <section class="message-container">
+      <div class="message-box">
+        <p id="message" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
