@@ -1,0 +1,188 @@
+/* General styles */
+body {
+    font-family: 'Runda', sans-serif;
+    font-size: 19px;
+    letter-spacing: 0.015em;
+    line-height: 1.5em;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Header styles */
+header {
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 1000;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-right: 20px;
+}
+
+.logo-image {
+    width: 70px;
+    height: auto;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+/* Navigation styles */
+.nav-links {
+    display: flex;
+    gap: 20px;
+    margin-right: 20px;
+}
+
+nav a {
+    font-family: 'Runda', sans-serif;
+    font-size: 16px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #333;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #e63946;
+}
+
+/* Greeting text style */
+.greeting {
+    font-family: 'Playfair Display', serif;
+    font-size: 10vw;
+    color: #e63946;
+    text-align: center;
+    line-height: 1.2em;
+    max-width: 80%;
+    margin: 0 auto;
+    word-wrap: break-word;
+    opacity: 0;
+    animation: fadeInGreeting 2s ease forwards; /* Fade-in on page load */
+}
+
+/* Fade-in animation for greeting on page load */
+@keyframes fadeInGreeting {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hero section styles */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Make it full screen */
+    text-align: center;
+}
+
+.spacer {
+    height: 200px; /* Adjust the height for more or less space */
+}
+
+/* Fade-in animation for the intro section */
+.intro-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(50px); /* Offset for animation */
+    transition: opacity 3s ease, transform 6s ease;
+}
+
+.intro-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Intro paragraph text */
+.intro-text {
+    font-family: 'Runda', sans-serif;
+    font-size: 1.5vw;
+    color: #464646;
+    text-align: center;
+    max-width: 70%;
+    line-height: 1.5em;
+    margin-bottom: 200px;
+}
+
+/* About Section Style */
+.about-section {
+    position: relative;
+    height: auto; /* Adjust height if needed */
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 0; /* Ensure no padding at the bottom */
+    margin-bottom: 0;  /* Remove any bottom margin */
+    scroll-snap-type: x mandatory;
+
+}
+
+/* About Gallery Style */
+.about-gallery {
+    display: flex;
+    flex-direction: row;
+    height: auto; /* Adjust height for smaller images */
+    overflow-y: hidden;
+    gap: 10px;
+    padding: 0 20px;
+    margin-bottom: 20px; /* Adjust this to control space between gallery and footer */
+    scroll-snap-align: start;
+    white-space: nowrap;
+    justify-content: center;
+}
+
+/* Each Gallery Image */
+.gallery-image {
+    height: 200px; /* Set a fixed smaller height for images */
+    width: 200px; /* Maintain aspect ratio */
+    object-fit: cover;
+    scroll-snap-align: center;
+    border-radius: 10px; 
+}
+
+/* Footer styles */
+footer {
+    background-color: none;
+    text-align: center;
+    padding: 10px 0; 
+    font-size: 14px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .greeting {
+        font-size: 10vw;
+        line-height: 1.3em;
+    }
+
+    .intro-text {
+        font-size: 4vw;
+    }
+
+    nav a {
+        margin: 10px 0;
+    }
+}
