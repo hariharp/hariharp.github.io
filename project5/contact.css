@@ -11,7 +11,7 @@ body, html {
     color: #333;
 }
 
-/* Header (Navigation Menu) Styles - Unchanged */
+/* Header (Navigation Menu) Styles */
 header {
     background: none;
     box-shadow: none;
@@ -40,7 +40,7 @@ header {
     padding-left: 20px;
 }
 
-/* Navigation Styles - Unchanged */
+/* Navigation Styles */
 .nav-links {
     display: flex;
     gap: 20px;
@@ -112,16 +112,6 @@ header {
     border-radius: 50%;
     filter: blur(100px);
     z-index: -1;
-    animation: moveShape 8s infinite alternate;
-}
-
-@keyframes moveShape {
-    0% {
-        transform: translate(0, 0) rotate(0deg);
-    }
-    100% {
-        transform: translate(40px, 30px) rotate(180deg);
-    }
 }
 
 /* Contact Container */
@@ -134,7 +124,6 @@ header {
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-    transition: transform 0.8s ease-in-out;
     backdrop-filter: blur(10px);
     overflow: hidden;
 }
@@ -203,15 +192,6 @@ button:hover {
 /* Contact Image */
 .contact-image {
     flex: 1;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-/* Show the LinkedIn badge when it becomes visible */
-.contact-image.visible {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 /* Responsive Design */
