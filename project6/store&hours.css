@@ -1,0 +1,125 @@
+:root {
+    --pastel-yellow: #fff4d4;
+    --warm-brown: #8B4513;
+    --light-brown: #DEB887;
+    --cream: #FFFAF0;
+    --highlight-yellow: #ffcc00;
+}
+
+/* Base styling */
+body {
+    background-color: var(--cream);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Make the body fill the viewport */
+    overflow-x: hidden;
+}
+
+/* Fixed navigation bar */
+.nav-container {
+    width: 200px;
+    background-color: var(--pastel-yellow);
+    padding: 2rem;
+    position: fixed;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    color: var(--warm-brown);
+    text-decoration: none;
+    font-size: 1.1rem;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--warm-brown);
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Main content container */
+.main-content {
+    
+    display: flex;
+    justify-content: center;
+    width: calc(100% - 220px);
+    padding: 100rem;
+    box-sizing: border-box;
+}
+
+.store-location-container {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: var(--highlight-yellow);
+    margin-bottom: 1rem;
+}
+
+p {
+    color: var(--warm-brown);
+    margin-bottom: 2rem;
+}
+
+.location-details, .address, .map, .store-hours, .faq {
+    background-color: var(--pastel-yellow);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
+    border-radius: 10px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .store-location-container {
+        width: 90%;
+        padding: 1rem;
+    }
+
+    .nav-container {
+        display: none;
+    }
+}

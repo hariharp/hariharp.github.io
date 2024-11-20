@@ -1,0 +1,107 @@
+:root {
+  --pastel-yellow: #fff4d4;
+  --warm-brown: #8B4513;
+  --light-brown: #DEB887;
+  --cream: #FFFAF0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  display: flex;
+  background-color: var(--cream);
+  min-height: 100vh;
+}
+
+.nav-container {
+  width: 200px;
+  background-color: var(--pastel-yellow);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  height: 100vh;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 1.5rem;
+  color: var(--warm-brown);
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: var(--warm-brown);
+  text-decoration: none;
+  font-size: 1.1rem;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: var(--warm-brown);
+  transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.gallery-container {
+  margin-left: 200px;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+  width: calc(100% - 200px);
+  height: calc(100vh - 4rem); /* Ensure the gallery height covers the page */
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.gallery-item.wide {
+  grid-column: span 2; /* Make it span two columns */
+}
+
+.gallery-item.tall {
+  grid-row: span 3; /* Make it span two rows */
+}
+
+.gallery-item.wide.tall {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

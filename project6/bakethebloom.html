@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bake the Bloom | Sunflower Bakery</title>
+  <link rel="stylesheet" href="bakethebloom.css">
+</head>
+<body>
+    <nav class="nav-container">
+        <div class="nav-links">
+            <a href=index.html class="nav-link">Home</a>
+            <a href="#" class="nav-link">Menu</a>
+            <a href="#" class="nav-link">About Us</a>
+            <a href="#" class="nav-link">Location</a>
+            <a href="#" class="nav-link">Contact</a>
+            <a href=bakethebloom.html class="nav-link">Bake the Bloom</a>
+        </div>
+    </nav>
+  <div class="container">
+    <h1>🌻 Bake the Bloom 🌻</h1>
+    <p>“You Pick the Treat That Blossoms Next!”</p>
+    <p>Vote on this week’s treat and see it bloom in the bakery next week!</p>
+
+    <!-- Options for voting -->
+    <div id="options">
+      <div class="option" data-flavor="option1">
+        <h3>1. S’mores Crunch</h3>
+        <button onclick="vote('option1')">Vote</button>
+        <div class="progress-bar" id="progress-option1"></div>
+      </div>
+
+      <div class="option" data-flavor="option2">
+        <h3>2. Matcha Raspberry Swirl</h3>
+        <button onclick="vote('option2')">Vote</button>
+        <div class="progress-bar" id="progress-option2"></div>
+      </div>
+
+      <div class="option" data-flavor="option3">
+        <h3>3. Cinnamon Churro</h3>
+        <button onclick="vote('option3')">Vote</button>
+        <div class="progress-bar" id="progress-option3"></div>
+      </div>
+
+      <div class="option" data-flavor="wildcard">
+        <h3>4. Baker's Wildcard: Surprise Flavor!</h3>
+        <button onclick="vote('wildcard')">Vote</button>
+        <div class="progress-bar" id="progress-wildcard"></div>
+      </div>
+    </div>
+
+    <div id="countdown">Voting ends in: <span id="time-left"></span></div>
+  </div>
+
+  <script src="bakethebloom.js"></script>
+</body>
+</html>
