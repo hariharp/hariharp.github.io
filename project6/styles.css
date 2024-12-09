@@ -1,4 +1,4 @@
-:root {
+\:root {
   --pastel-yellow: #fff4d4;
   --warm-brown: #8B4513;
   --light-brown: #DEB887;
@@ -31,14 +31,6 @@ body {
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.logo {
-  font-size: 1.5rem;
-  color: var(--warm-brown);
-  margin-bottom: 2rem;
-  text-align: center;
-  font-weight: bold;
-}
-
 .nav-links {
   display: flex;
   flex-direction: column;
@@ -53,30 +45,13 @@ body {
   transition: color 0.3s;
 }
 
-.nav-link::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: -4px;
-  left: 0;
-  background-color: var(--warm-brown);
-  transition: width 0.3s;
-}
-
-.nav-link:hover::after {
-  width: 100%;
-}
-
 .gallery-container {
   margin-left: 200px;
   padding: 2rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
   gap: 1rem;
   width: calc(100% - 200px);
-  height: calc(100vh - 4rem); /* Ensure the gallery height covers the page */
 }
 
 .gallery-item {
@@ -87,21 +62,111 @@ body {
   transition: transform 0.3s;
 }
 
-.gallery-item.wide {
-  grid-column: span 2; /* Make it span two columns */
-}
-
-.gallery-item.tall {
-  grid-row: span 3; /* Make it span two rows */
-}
-
-.gallery-item.wide.tall {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-
 .gallery-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.gallery-item.wide {
+  grid-column: span 2;
+}
+
+.gallery-item.tall {
+  grid-row: span 2;
+}
+
+/* Game-specific styles */
+.game-container {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+  background-color: #fffbea;
+  color: #333;
+}
+
+.game-container h1 {
+  color: #f1c40f;
+  font-size: 2em;
+}
+
+.game-container p {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.game-container input {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #f1c40f;
+  border-radius: 5px;
+  outline: none;
+  width: 200px;
+  text-align: center;
+}
+
+.game-container input:focus {
+  border-color: #f39c12;
+}
+
+.game-container button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f1c40f;
+  color: white;
+  font-weight: bold;
+}
+
+.game-container button:hover {
+  background-color: #f39c12;
+}
+
+.game-container #message {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #e67e22;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  .nav-container {
+    width: 100%;
+    height: auto;
+    position: static;
+    padding: 1rem;
+    box-shadow: none;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .gallery-container {
+    margin-left: 0;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-container {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item.wide, 
+  .gallery-item.tall {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
 }

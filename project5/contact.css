@@ -61,23 +61,6 @@ header {
     color: #e63946;
 }
 
-/* Fullscreen Landscape Video Background */
-.video-background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    z-index: -1;
-}
-
-.background-video {
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-}
-
 /* Content Wrapper */
 .content-wrapper {
     position: relative;
@@ -187,11 +170,6 @@ button {
 button:hover {
     background-color: #d62839;
     transform: scale(1.05);
-}
-
-/* Contact Image */
-.contact-image {
-    flex: 1;
 }
 
 /* Responsive Design */
