@@ -1,57 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bake the Bloom | Sunflower Bakery</title>
-  <link rel="stylesheet" href="bakethebloom.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bake the Bloom|Sunflower Bakery</title>
+    <link rel="stylesheet" href="bakethebloom.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="nav-container">
         <div class="nav-links">
-          <a href="index.html" class="nav-link">Home</a>
-          <a href="store&hours.html" class="nav-link">Store & Hours</a>
-          <a href=bakethebloom.html class="nav-link">Bake the Bloom</a>
-          <a href="#" class="nav-link">Menu</a>
-          <a href="#" class="nav-link">About</a>
-          <a href="#" class="nav-link">Contact</a>
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="store&hours.html" class="nav-link">Store & Hours</a>
+            <a href="bakethebloom.html" class="nav-link">Bake the Bloom</a>
+            <a href="menu.html" class="nav-link">Menu</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="contact.html" class="nav-link">Contact</a>
         </div>
     </nav>
-  <div class="container">
-    <h1>🌻 Bake the Bloom 🌻</h1>
-    <p>“You Pick the Treat That Blossoms Next!”</p>
-    <p>Vote on this week’s treat and see it bloom in the bakery next week!</p>
 
-    <!-- Options for voting -->
-    <div id="options">
-      <div class="option" data-flavor="option1">
-        <h3>1. S’mores Crunch</h3>
-        <button onclick="vote('option1')">Vote</button>
-        <div class="progress-bar" id="progress-option1"></div>
-      </div>
+    <main class="bake-bloom-container">
+        <h1>Bake the Bloom</h1>
+        <p>Vote for the cake flavor you'd like to see in our bakery next week!</p>
 
-      <div class="option" data-flavor="option2">
-        <h3>2. Matcha Raspberry Swirl</h3>
-        <button onclick="vote('option2')">Vote</button>
-        <div class="progress-bar" id="progress-option2"></div>
-      </div>
+        <section class="vote-section">
+            <form id="voteForm">
+                <label for="flavor">Choose your flavor:</label>
+                <select id="flavor" name="flavor">
+                    <option value="Rose">Strawberry and Rose</option>
+                    <option value="Chocloate">Elderflower and Lemon</option>
+                    <option value="Sunflower">Chocolate and Sunflower</option>
+                    <option value="Lavender">Lavender and Blackberry</option>
+                </select>
+                <button type="submit">Vote</button>
+            </form>
+        </section>
 
-      <div class="option" data-flavor="option3">
-        <h3>3. Cinnamon Churro</h3>
-        <button onclick="vote('option3')">Vote</button>
-        <div class="progress-bar" id="progress-option3"></div>
-      </div>
+        <section class="results-section">
+            <h2>Live Results</h2>
+            <div id="results">
+                <p>Strawberry and Rose: <span id="strawberryandrosecount">0</span> votes</p>
+                <p>Elderflower and Lemon: <span id="elderflowerandlemoncount">0</span> votes</p>
+                <p>Chocolate and Sunflower: <span id="chocolateandsunflowercount">0</span> votes</p>
+                <p>Lavender and Blackerry: <span id="lavednerount">0</span> votes</p>
+            </div>
+        </section>
+    </main>
 
-      <div class="option" data-flavor="wildcard">
-        <h3>4. Baker's Wildcard: Surprise Flavor!</h3>
-        <button onclick="vote('wildcard')">Vote</button>
-        <div class="progress-bar" id="progress-wildcard"></div>
-      </div>
-    </div>
-
-    <div id="countdown">Voting ends in: <span id="time-left"></span></div>
-  </div>
-
-  <script src="bakethebloom.js"></script>
+    <script src="bakethebloom.js"></script>
 </body>
 </html>

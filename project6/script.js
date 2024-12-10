@@ -20,56 +20,65 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Add a click listener to the first gallery item (id="playGame")
-    const playGameItem = document.getElementById('playGame'); // Ensure we're using `getElementById`
-    
-    // Make sure the event listener is working
-    if (playGameItem) {
-        playGameItem.addEventListener('click', () => {
-            // Replace content with the game
-            playGameItem.innerHTML = `
-                <div class="game-container">
-                    <h1>Guess the Number</h1>
-                    <p>I'm thinking of a number between 1 and 100. Can you guess it?</p>
-                    <input type="number" id="guessInput" placeholder="Enter your guess">
-                    <button id="submitGuess">Guess</button>
-                    <p id="message"></p>
-                    <button id="restart">Restart Game</button>
-                </div>
-            `;
+    // Event listener to trigger the game when the first gallery item is clicked
+    const playGameItem = document.querySelector('#playGame');
+    const originalImage = playGameItem.innerHTML;  
+    playGameItem.addEventListener('click', () => {
+        // Check if the game is already loaded to prevent reloading
+        if (playGameItem.querySelector('.game-container')) return;
 
-            // Game logic
-            let randomNumber = Math.floor(Math.random() * 100) + 1;
-            let attempts = 0;
+        // Hide the image and display the game inside the gallery item
+        const gameHTML = `
+            <div class="game-container">
+                <h1>Guess the Number</h1>
+                <p>I'm thinking of a number between 1 and 100. Can you guess it?</p>
+                <input type="number" id="guessInput" placeholder="Enter your guess" />
+                <button id="submitGuess">Guess</button>
+                <p id="message"></p>
+                <button id="restart">Restart Game</button>
+            </div>
+        `;
+        playGameItem.innerHTML = gameHTML;
 
-            // Handle Guessing
-            document.getElementById("submitGuess").addEventListener("click", () => {
-                const guess = parseInt(document.getElementById("guessInput").value);
-                attempts++;
+        // Game logic
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = 0;
 
-                if (isNaN(guess)) {
-                    document.getElementById("message").textContent = "Please enter a valid number.";
-                    return;
-                }
+        // Attach event listeners to the game elements
+        const submitButton = document.getElementById("submitGuess");
+        const guessInput = document.getElementById("guessInput");
+        const restartButton = document.getElementById("restart");
+        const messageElement = document.getElementById("message");
 
-                if (guess === randomNumber) {
-                    document.getElementById("message").textContent = `🎉 Correct! You guessed it in ${attempts} attempts.`;
-                } else if (guess > randomNumber) {
-                    document.getElementById("message").textContent = "📉 Too high! Try again.";
-                } else {
-                    document.getElementById("message").textContent = "📈 Too low! Try again.";
-                }
-            });
+        // Handle the guess submission
+        submitButton.addEventListener("click", () => {
+            const guess = parseInt(guessInput.value);
+            attempts++;
 
-            // Restart the game
-            document.getElementById("restart").addEventListener("click", () => {
-                randomNumber = Math.floor(Math.random() * 100) + 1;
-                attempts = 0;
-                document.getElementById("message").textContent = "";
-                document.getElementById("guessInput").value = "";
-            });
+            if (isNaN(guess)) {
+                messageElement.textContent = "Please enter a valid number.";
+                return;
+            }
+
+            if (guess === randomNumber) {
+                messageElement.textContent = `🎉 Correct! You guessed it in ${attempts} attempts.`;
+                // After winning, restore the image
+                setTimeout(() => {
+                    playGameItem.innerHTML = originalImage;  // Replace the game with the original image
+                }, 2000); // Delay to give time for the win message
+            } else if (guess > randomNumber) {
+                messageElement.textContent = "📉 Too high! Try again.";
+            } else {
+                messageElement.textContent = "📈 Too low! Try again.";
+            }
         });
-    } else {
-        console.log('Error: The playGame element was not found!');
-    }
+
+        // Restart the game
+        restartButton.addEventListener("click", () => {
+            randomNumber = Math.floor(Math.random() * 100) + 1;
+            attempts = 0;
+            messageElement.textContent = "";
+            guessInput.value = "";
+        });
+    });
 });

@@ -1,0 +1,142 @@
+:root {
+    --pastel-yellow: #f9f3e3;  /* Soft pastel yellow for backgrounds */
+    --light-yellow: #f5eeb4;   /* Soft yellow for the nav bar */
+    --warm-brown: #8B4513;     /* Warm brown for text and accents */
+    --light-brown: #DEB887;    /* Light brown for subtle elements */
+    --cream: #FFFAF0;          /* Creamy background color for cards */
+    --luxury-gold: #FFD700;    /* Golden accents for luxurious feel */
+}
+
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    background-color: var(--pastel-yellow);
+    min-height: 100vh;
+    font-family: 'Georgia', serif;
+    color: var(--warm-brown);
+}
+
+.nav-container {
+    width: 250px;
+    background-color: var(--light-yellow); /* Soft yellow nav bar */
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    height: 100vh;
+    box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+    left: 0;
+  }
+  
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .nav-link {
+    color: var(--warm-brown);
+    text-decoration: none;
+    font-size: 1.2rem; 
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s;
+  }
+  
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -6px;
+    left: 0;
+    background-color: var(--luxury-gold); /* Golden underline */
+    transition: width 0.3s;
+  }
+  
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+/* Menu page container */
+.menu-container {
+    margin-left: 250px; /* Leave space for the fixed nav */
+    padding: 2rem;
+    text-align: center;
+    background-color: var(--pastel-yellow);
+    color: var(--warm-brown);
+}
+
+.menu-title {
+    font-size: 4.5rem;
+    color: var(--luxury-gold);
+    margin-bottom: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.menu-sections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.menu-section {
+    background-color: var(--cream);
+    border: 2px solid var(--light-brown);
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 300px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+}
+
+.menu-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.menu-section img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 1rem;
+}
+
+.menu-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--warm-brown);
+}
+
+.menu-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-section li {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    color: var(--warm-brown);
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .menu-sections {
+        flex-direction: column;
+        align-items: center;
+    }
+}

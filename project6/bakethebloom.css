@@ -1,181 +1,213 @@
 :root {
-    --pastel-yellow: #fff4d4;
-    --warm-brown: #8B4513;
-    --light-brown: #DEB887;
-    --cream: #FFFAF0;
-    --highlight-yellow: #ffcc00; 
-    --alert-red: #ff5733; 
-  }
-  
-  /* Global Styles */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-  }
-  
+  --pastel-yellow: #f9f3e3;  /* Soft pastel yellow for backgrounds */
+  --light-yellow: #f5eeb4;   /* Soft yellow for the nav bar */
+  --warm-brown: #8B4513;     /* Warm brown for text and accents */
+  --light-brown: #DEB887;    /* Light brown for subtle elements */
+  --cream: #FFFAF0;          /* Creamy background color for game or sections */
+  --highlight-yellow: #ffcc00; /* Bright yellow for highlights */
+  --luxury-gold: #FFD700;    /* Golden accents for luxurious feel */
+}
+
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Georgia', serif; 
+}
+
+body {
+  display: flex;
+  background-image: url(images/background.jpg);
+  background-size: cover; /* Ensures the image covers the whole page */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center; /* Centers the image */
+  background-color: var(--pastel-yellow);  /* Soft yellow background */
+  min-height: 100vh;
+  color: var(--warm-brown); /* Set base text color to warm brown */
+}
+
+
+.nav-container {
+  width: 250px;
+  background-color: var(--light-yellow); /* Soft yellow nav bar */
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  height: 100vh;
+  box-shadow: 2px 0 15px rgba(0, 0, 0, 0.1);
+  left: 0;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: var(--warm-brown);
+  text-decoration: none;
+  font-size: 1.2rem; 
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -6px;
+  left: 0;
+  background-color: var(--luxury-gold); /* Golden underline */
+  transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+
+.bake-bloom-container {
+  margin-left:700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  padding: 2rem;
+  background-color: var(--cream);
+  color: var(--warm-brown);
+  text-align: center;
+}
+
+.bake-bloom-container h1 {
+  font-size: 3rem;
+  color: var(--luxury-gold);
+  margin-bottom: 1rem;
+}
+
+.bake-bloom-container p {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  font-family: 'Georgia', serif;
+}
+
+.vote-section {
+  background: white;
+  border: 2px solid var(--luxury-gold);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.vote-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.vote-section label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--warm-brown);
+}
+
+.vote-section select {
+  padding: 10px;
+  font-size: 1rem;
+  border: 2px solid var(--luxury-gold);
+  border-radius: 5px;
+  background-color: var(--cream);
+}
+
+.vote-section button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  background-color: var(--luxury-gold);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.vote-section button:hover {
+  background-color: var(--highlight-yellow);
+}
+
+/* Results Section */
+.results-section {
+  margin-top: 2rem;
+  background: white;
+  border: 2px solid var(--luxury-gold);
+  border-radius: 15px;
+  padding: 1.5rem;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.results-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--luxury-gold);
+}
+
+.results-section p {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  color: var(--warm-brown);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
   body {
-    display: flex;
-    background-color: var(--cream);
-    min-height: 100vh;
+    flex-direction: column;
   }
-  
-  /* Navigation Styles */
+
   .nav-container {
-    width: 200px;
-    background-color: var(--pastel-yellow);
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    height: 100vh;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: auto;
+    position: static;
+    padding: 1rem;
+    box-shadow: none;
   }
-  
-  .logo {
-    font-size: 1.5rem;
-    color: var(--warm-brown);
-    margin-bottom: 2rem;
-    text-align: center;
-    font-weight: bold;
-  }
-  
+
   .nav-links {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  
-  .nav-link {
-    color: var(--warm-brown);
-    text-decoration: none;
-    font-size: 1.1rem;
-    position: relative;
-    transition: color 0.3s;
-  }
-  
-  .nav-link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background-color: var(--warm-brown);
-    transition: width 0.3s;
-  }
-  
-  .nav-link:hover::after {
-    width: 100%;
-  }
-  
-  /* Gallery Styles */
-  .gallery-container {
-    margin-left: 200px;
-    padding: 2rem;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 1rem;
-    width: calc(100% - 200px);
-    height: calc(100vh - 4rem); /* Ensure the gallery height covers the page */
   }
-  
-  .gallery-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: transform 0.3s;
+
+  .bake-bloom-container {
+    margin-left: 0;
+    padding: 1rem;
+    height: auto;
   }
-  
-  .gallery-item.wide {
-    grid-column: span 2;
+}
+
+@media (max-width: 480px) {
+  .bake-bloom-container h1 {
+    font-size: 2.5rem;
   }
-  
-  .gallery-item.tall {
-    grid-row: span 2;
+
+  .vote-section,
+  .results-section {
+    width: 90%;
   }
-  
-  .gallery-item.wide.tall {
-    grid-column: span 2;
-    grid-row: span 2;
+
+  .vote-section button,
+  .results-section h2 {
+    font-size: 1rem;
   }
-  
-  .gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  /* Bake the Bloom Styles */
-  .container {
-    text-align: center;
-    width: 80%;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 2rem;
-  }
-  
-  h1 {
-    color: var(--highlight-yellow);
-    margin-bottom: 10px;
-  }
-  
-  p {
-    margin-bottom: 20px;
-    color: var(--warm-brown);
-  }
-  
-  #options {
-    margin-top: 20px;
-  }
-  
-  .option {
-    background-color: var(--pastel-yellow);
-    padding: 20px;
-    margin-bottom: 15px;
-    border-radius: 10px;
-    border: 2px solid var(--highlight-yellow);
-    text-align: left;
-    position: relative;
-  }
-  
-  h3 {
-    color: var(--warm-brown);
-  }
-  
-  button {
-    background-color: var(--highlight-yellow);
-    color: white;
-    border: none;
-    padding: 8px 16px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #ffb000;
-  }
-  
-  .progress-bar {
-    height: 20px;
-    width: 0%;
-    background-color: var(--highlight-yellow);
-    margin-top: 10px;
-    border-radius: 5px;
-    transition: width 0.3s ease;
-  }
-  
-  #countdown {
-    margin-top: 20px;
-    font-weight: bold;
-    color: var(--alert-red);
-  }
-  
+}
