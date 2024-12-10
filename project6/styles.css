@@ -23,7 +23,6 @@ body {
   color: var(--warm-brown); /* Set base text color to warm brown */
 }
 
-
 .nav-container {
   width: 250px;
   background-color: var(--light-yellow); /* Soft yellow nav bar */
@@ -177,9 +176,20 @@ body {
     gap: 1rem;
   }
 
+  .nav-link {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+
   .gallery-container {
     margin-left: 0;
+    padding: 1rem;
     grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .gallery-item img {
+    height: auto;
+    aspect-ratio: 4 / 3; /* Ensure consistent aspect ratio */
   }
 }
 
@@ -192,5 +202,26 @@ body {
   .gallery-item.tall {
     grid-column: span 1;
     grid-row: span 1;
+  }
+
+  .gallery-item img {
+    aspect-ratio: 1 / 1; /* Square images for very small screens */
+  }
+
+  .game-container {
+    padding: 10px;
+  }
+
+  .game-container h1 {
+    font-size: 1.8em;
+  }
+
+  .game-container p {
+    font-size: 1.1em;
+  }
+
+  .game-container input,
+  .game-container button {
+    font-size: 14px;
   }
 }

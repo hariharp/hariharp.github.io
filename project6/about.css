@@ -136,12 +136,23 @@ body {
 /* For small screens like tablets and smaller desktops */
 @media (max-width: 1024px) {
     .nav-container {
-        width: 200px;
-        padding: 1.5rem;
+        width: 100%;
+        height: auto;
+        position: static;
+        flex-direction: row;
+        justify-content: space-around;
+        padding: 1rem;
+        box-shadow: none;
     }
 
     .nav-links {
+        flex-direction: row;
         gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .nav-link {
+        font-size: 1rem;
     }
 
     .about-container {
@@ -163,20 +174,6 @@ body {
         flex-direction: column;
     }
 
-    .nav-container {
-        width: 100%;
-        height: auto;
-        padding: 1rem;
-        position: static;
-        box-shadow: none;
-    }
-
-    .nav-links {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-    }
 
     .about-container {
         padding-left: 0;
@@ -202,10 +199,7 @@ body {
 
 /* For very small screens (up to 480px) */
 @media (max-width: 480px) {
-    .nav-container {
-        width: 100%;
-        padding: 1rem;
-    }
+
 
     .about-container h1 {
         font-size: 1.8rem;

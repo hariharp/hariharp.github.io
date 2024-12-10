@@ -174,20 +174,26 @@ body {
     flex-direction: column;
   }
 
+ 
   .nav-container {
     width: 100%;
     height: auto;
     position: static;
+    flex-direction: row;
+    justify-content: space-around;
     padding: 1rem;
     box-shadow: none;
-  }
+}
 
-  .nav-links {
+.nav-links {
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
     gap: 1rem;
-  }
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    font-size: 1rem;
+}
 
   .bake-bloom-container {
     margin-left: 0;
