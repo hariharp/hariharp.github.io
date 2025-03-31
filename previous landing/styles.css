@@ -1,0 +1,260 @@
+/* Global Styles */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    box-sizing: border-box;
+    background-color: #000; /* Default background color if my image doesn't load*/
+    display: flex;
+    flex-direction: column;
+}
+
+/* Nav Bar */
+nav {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 15px 30px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100; /* this makes sure that the nav bar is always going to be placed above other content */
+    box-sizing: border-box;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #007bff;
+    border-radius: 5px;
+}
+
+/* Main Content Area */
+main {
+    flex: 1;
+    padding: 80px 20px 20px; 
+    color: white;
+    text-align: center;
+    background: url('images/projects-background.jpg') no-repeat center center/cover;
+    box-sizing: border-box;
+}
+
+/* Home Page Styles */
+.home-page {
+    position: relative;
+    text-align: center;
+    color: white;
+    height: 100vh;
+    background: url('images/water.jpg') no-repeat center center/cover;
+    margin-top: 60px;
+    overflow: hidden;
+}
+
+/* Centered Name */
+.animated-name-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* This will make sure that it appears above the background image */
+}
+
+.animated-name {
+    font-size: 4rem;
+    animation: fadeIn 3s ease-out;
+    text-decoration: none;
+    color: white;
+}
+
+
+.arrow-down {
+    position: absolute;
+    top: calc(50% + 100px); 
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.arrow-icon {
+    width: 30px; 
+    height: auto;
+    color: white;
+    cursor: pointer;
+    animation: bounce 2s infinite;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-30px); }
+    60% { transform: translateY(-15px); }
+}
+
+/* About Me Page Styles */
+#about-me-section {
+    background: url('images/aboutbackground.jpg') no-repeat center center/cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    min-height: calc(100vh - 60px); 
+    box-sizing: border-box; 
+    margin-top: 60px; 
+}
+
+/* Profile Picture */
+.profile-picture {
+    width: 150px; /* Adjusted size */
+    height: 250px; /* Adjusted size for a rectangular square */
+    border-radius: 0; /* Remove rounded corners for a square */
+    border: 5px solid #fff; /* included a boarder so that it would pop out */
+    margin-bottom: 20px;
+    object-fit: fill; 
+}
+
+/* About Text */
+.about-text {
+    max-width: 800px; /* Adjusted for readability */
+    font-size: 1.0rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 0 auto; /* Center the text block horizontally */
+}
+
+/* LinkedIn Button */
+.linkedin-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #0077b5;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.linkedin-button:hover {
+    background-color: #005582;
+}
+
+/* Image Gallery Styles */
+.image-gallery-container {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    white-space: nowrap; /* Prevent line breaks */
+    padding: 10px 0;
+    display: flex; /* Ensure horizontal layout */
+    gap: 10px; /* Space between images */
+}
+
+.image-gallery-container figure {
+    margin: 0;
+    display: inline-block; /* Keep each image in line */
+}
+
+.image-gallery-container img {
+    width: 200px; /* Set the width of each image */
+    height: 150px; /* Set the height of each image */
+    border-radius: 8px;
+    object-fit: cover; 
+    transition: transform 0.3s ease;
+}
+
+.image-gallery-container img:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+
+.image-gallery-container figcaption {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+}
+/* Projects Page Styles */
+.projects-page {
+    background: url('images/projectsback.jpg') no-repeat center center/cover; /* Background image */
+    background-size: cover; 
+    min-height: calc(100vh - 60px); 
+    padding: 20px; 
+    box-sizing: border-box; 
+}
+
+/* Project Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 20px;
+    max-width: 1200px; /* Limit max width */
+    margin: 0 auto; /* Center grid */
+    padding: 20px;
+}
+
+/* Project Item Styles */
+.project-item {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-item img {
+    width: 100%;
+    height: auto;
+    display: block; 
+}
+
+.project-info {
+    padding: 15px;
+}
+
+.project-info h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.project-info p {
+    font-size: 0.9rem;
+    color: #ddd; 
+}
+
+/* Project Item Hover Effect */
+.project-item:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7); /* Enhanced shadow on hover */
+}
+.message-box {
+    display: inline-block; /* Centering the message box */
+    background-color: #000; 
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 600px; /* Optional max width */
+}
