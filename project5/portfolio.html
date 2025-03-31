@@ -17,13 +17,15 @@
                 </a>
             </div>
             <nav class="nav-links">
-                <a href="index.html#about-section">About</a>
+                <a href="about.html">About</a>
                 <a href="portfolio.html">My Work</a>
                 <a href="contact.html">Reach Out</a>
             </nav>
         </div>
     </header>
-
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
     <section class="portfolio-section">
         <div class="filter-buttons">
             <button class="filter-button active" data-filter="all">All</button>
@@ -83,12 +85,12 @@
 
             <div class="portfolio-item new-media">
                 <img src="images/htmlproj1.png" alt="html project one image" class="portfolio-image" href="/hariharp.github.io/project1/index.html">
-                <p class="portfolio-description">Simple HTML integration</p>
+                <p class="portfolio-description">Simple HTML integration - focus on WCAG compliance</p>
             </div>
 
             <div class="portfolio-item new-media">
                 <img src="images/earlyinterenetartaccessiblity.png" alt="Early Internet Art Project Image" class="portfolio-image" href="/hariharp.github.io/project2/index.html">
-                <p class="portfolio-description">Hypertext Narrative Based off of Early Internet Art</p>
+                <p class="portfolio-description">Hypertext Narrative Based off of Early Internet Art - Focus on WCAG compliance for user friendly content</p>
             </div>
 
             <div class="portfolio-item new-media">
@@ -196,5 +198,11 @@
     </footer>
 
     <script src="portfolio.js"></script>
+    <script>
+        window.addEventListener("load", function() {
+            document.getElementById("preloader").style.display = "none";
+        });
+    </script>
+    
 </body>
 </html>

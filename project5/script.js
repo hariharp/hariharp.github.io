@@ -16,14 +16,13 @@ document.addEventListener('DOMContentLoaded', function () {
             introSection.classList.remove('visible');
         }
     }
-
     // Function to handle horizontal scrolling in the "About Me" section
     function handleHorizontalScroll() {
         const aboutPosition = aboutSection.getBoundingClientRect().top;
 
         if (aboutPosition <= 0) {
             const scrollAmount = window.scrollY - aboutSection.offsetTop;
-            aboutGallery.scrollLeft = scrollAmount * 2; // Adjust speed as needed
+            aboutGallery.scrollLeft = scrollAmount * 0.2; // Adjust speed as needed
         }
     }
 

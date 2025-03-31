@@ -61,14 +61,14 @@ nav a:hover {
 
 /* Greeting text style */
 .greeting {
-    font-family: 'Playfair Display', serif;
-    font-size: 10vw;
-    color: #e63946;
+    font-family: 'Georgia', serif;
+    font-size: 7vw;
+    color: #276cff;
     text-align: center;
     line-height: 1.2em;
-    max-width: 80%;
+   /* max-width: 80%;
     margin: 0 auto;
-    word-wrap: break-word;
+    word-wrap: break-word; */
     opacity: 0;
     animation: fadeInGreeting 2s ease forwards; /* Fade-in on page load */
 }
