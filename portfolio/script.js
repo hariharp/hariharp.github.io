@@ -143,3 +143,12 @@ document.addEventListener('DOMContentLoaded', function () {
       });
   }
 });
+// tiny scroll animation JS
+document.addEventListener("scroll", () => {
+    document.querySelectorAll("[data-animate]").forEach(el => {
+      if (el.getBoundingClientRect().top < window.innerHeight - 50) {
+        el.classList.add("visible");
+      }
+    });
+  });
+  

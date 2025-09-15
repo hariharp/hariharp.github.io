@@ -142,6 +142,109 @@
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
+/* Coding Section */
+.coding-section {
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.coding-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.coding-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.coding-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.coding-text p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--text-color);
+}
+
+.coding-image {
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.coding-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.coding-image img:hover {
+  transform: scale(1.03);
+}
+.coding-image {
+  position: relative;
+  flex: 1;
+  min-width: 300px;
+  text-align: center;
+}
+
+.coding-image::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  left: -40px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle at center, #ff9a9e, #fad0c4);
+  border-radius: 50%;
+  filter: blur(60px);
+  z-index: -1;
+}
+.code-snippet {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: #1e1e1e;
+  color: #d4d4d4;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .coding-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .coding-text h2 {
+    font-size: 2rem;
+  }
+
+  .coding-text p {
+    font-size: 1rem;
+  }
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -168,4 +271,14 @@
       width: 250px;
       height: 250px;
   }
+}
+[data-animate] {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+[data-animate].visible {
+  opacity: 1;
+  transform: translateY(0);
 }
